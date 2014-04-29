@@ -24,9 +24,6 @@ public class MainActivity extends ActionBarActivity {
         Parse.initialize(this, "5FerSZgIaGUPLBpRIMnRWWGWwEAybpCYjqnOKvyf", 
         		"5Dx81EF1JAJ2izlAjOsxV5UuSikFIGGims0vlEM0");
         
-        ParseObject lolcat = new ParseObject("lolcat");
-        lolcat.put("name", "Chester");
-        lolcat.saveInBackground();
         
         setContentView(R.layout.activity_main);
 
