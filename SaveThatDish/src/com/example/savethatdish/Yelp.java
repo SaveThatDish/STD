@@ -1,4 +1,3 @@
-// here we go motherfucker
 package com.example.savethatdish;
 
 import org.scribe.builder.ServiceBuilder;
