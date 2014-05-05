@@ -56,16 +56,19 @@ public class Yelp {
    }
 
    // CLI
+   /*
    public static void main(String[] args) {
-      // Update tokens here from Yelp developers site, Manage API access.
-      String consumerKey = "";
-      String consumerSecret = "";
-      String token = "";
-      String tokenSecret = "";
+      // These are our keys I guess
+      String consumerKey = "PYJ9fp4Zs357x8GKEcc2OA";
+      String consumerSecret = "Svw5yWnPK26_WYOrbkcvsC4PMNU";
+      String token = "_o14KmTq969arSh-BdJBIHIBLanS3h2J";
+      String tokenSecret = "MLFvYopfLQVy8YWpN7WObb8u_EA";
 
+      // example use of Yelp's API
       Yelp yelp = new Yelp(consumerKey, consumerSecret, token, tokenSecret);
       String response = yelp.search("burritos", 30.361471, -87.164326);
 
       System.out.println(response);
    }
+   */
 }
