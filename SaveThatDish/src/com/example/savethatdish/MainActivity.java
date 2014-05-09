@@ -22,8 +22,6 @@ public class MainActivity extends FragmentActivity {
 	    Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af",
             "U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
 
-      // ParseObject lolcat = new ParseObject("lolcat");
-
 	    if (savedInstanceState == null) {
 	        // Add the fragment on initial activity setup
 	        mainFragment = new MainFragment();
