@@ -20,8 +20,10 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    
-	    Parse.initialize(this, "5FerSZgIaGUPLBpRIMnRWWGWwEAybpCYjqnOKvyf",
-	    		"5Dx81EF1JAJ2izlAjOsxV5UuSikFIGGims0vlEM0");
+	    Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", 
+	    		"U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
+	    
+	    Dish test = new Dish("Double-Double Burger", "In-N-Out");
 
 	    if (savedInstanceState == null) {
 	        // Add the fragment on initial activity setup

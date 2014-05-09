@@ -1,13 +1,20 @@
 package com.example.savethatdish;
 
+import com.parse.ParseObject;
+
+
+
 public class Dish {
 
    private String name;
    private String restaurant;
+   ParseObject dish;
 
    public Dish(String dishName, String restaurantName) {
       this.name = dishName;
       this.restaurant = restaurantName;
+      
+      dish = new ParseObject("Dish");
    }
 
    // delete local copy, connect to parse?
