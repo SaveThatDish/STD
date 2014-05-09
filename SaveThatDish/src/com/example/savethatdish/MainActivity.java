@@ -1,7 +1,5 @@
 package com.example.savethatdish;
 
-//BS
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 public class MainActivity extends FragmentActivity {
 	
@@ -21,10 +20,8 @@ public class MainActivity extends FragmentActivity {
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    
-	    Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af",
-            "U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
-
-      // ParseObject lolcat = new ParseObject("lolcat");
+	    Parse.initialize(this, "5FerSZgIaGUPLBpRIMnRWWGWwEAybpCYjqnOKvyf",
+	    		"5Dx81EF1JAJ2izlAjOsxV5UuSikFIGGims0vlEM0");
 
 	    if (savedInstanceState == null) {
 	        // Add the fragment on initial activity setup
