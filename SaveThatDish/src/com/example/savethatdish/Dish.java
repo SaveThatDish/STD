@@ -29,10 +29,10 @@ public class Dish {
     * only interested in creating a local var for the sake of convenience. Instead create a method that does that.
     * 
     * @Return: boolean to check for success? 
-    * OtheR: Error handling should be done within this method. Abstract that inf 
+    * OtheR: Error handling should be done within this method.  
     */
    
-   public boolean addToParse() {
+   private boolean addToParse() {
 	   dish = new ParseObject("Dish"); 
 	   //Associated info to add: restaurant name, location. Anything else?
 	   return true; //need to do error handling before returning
@@ -80,7 +80,7 @@ public class Dish {
     * @return: returns true if successfully added to bucketlist,
     *  	    returns false if already on bucketlist
     */
-   public boolean addBucketlist(String userName) {
+   public boolean addToBucketlist(String userName) {
       if (onBucketlist(userName))
         return false;
       //else add to Parse
