@@ -15,8 +15,6 @@ public class Dish {
       this.restaurant = restaurantName;
       
       dish = new ParseObject("Dish");
-      dish.put("name", name);
-      //link to restaurant
    }
 
    // delete local copy, connect to parse?
