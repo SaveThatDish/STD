@@ -7,6 +7,7 @@
     <string name="app_id">667183643329525</string>
     
     
-    <string name="get_started">To get started, log in using Facebook</string>
+    <string name="get_started">Start saving your dish! Log in using Facebook</string>
+    <string name="settings">Settings</string>
 
 </resources>
