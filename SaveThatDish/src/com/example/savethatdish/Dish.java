@@ -1,6 +1,13 @@
 package com.example.savethatdish;
 
+import java.util.List;
+
+import android.util.Log;
+
+import com.parse.FindCallback;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseException;
 
 
 public class Dish {
@@ -11,8 +18,27 @@ public class Dish {
    
    //we need to store the location data, not restaurant name. location implicitly has res. name as well
    public Dish(String dishName, String shortAddress) { //what info is the location stored as... string? 
-      this.name = dishName;
-      this.location = shortAddress;      
+      
+	  //Assign variables
+	  this.name = dishName;
+      this.location = shortAddress;   
+      
+      //Check to see if the dish is already in the database
+      ParseQuery<ParseObject> query = ParseQuery.getQuery("Dish");
+      query.whereEqualTo("name", dishName);
+      //query.whereEqualTo("short_address", shortAddress);
+      query.findInBackground(new FindCallback<ParseObject>() {
+          public void done(List<ParseObject> list, ParseException e) {
+              if (e == null) 
+              {
+            	  Log.d("testing", "List is of size  " + list.size());
+              } 
+              else 
+              {
+                  Log.d("testing", "Error: " + e.getMessage());
+              }
+          }
+      });
       
       //if dish doesn't exist in parse
         //addToParse(); //check return type/error handling. what do we do if it fails?
