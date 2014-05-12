@@ -56,19 +56,19 @@ public class MainActivity extends FragmentActivity {
 	}
 	
 	private void showFragment(int fragmentIndex, boolean addToBackStack) {
-	    FragmentManager fm = getSupportFragmentManager();
-	    FragmentTransaction transaction = fm.beginTransaction();
-	    for (int i = 0; i < fragments.length; i++) {
-	        if (i == fragmentIndex) {
-	            transaction.show(fragments[i]);
-	        } else {
-	            transaction.hide(fragments[i]);
-	        }
-	    }
-	    if (addToBackStack) {
-	        transaction.addToBackStack(null);
-	    }
-	    transaction.commit();
+		FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction transaction = fm.beginTransaction();
+        for (int i = 0; i < fragments.length; i++) {
+            if (i == fragmentIndex) {
+                transaction.show(fragments[i]);
+            } else {
+                transaction.hide(fragments[i]);
+            }
+        }
+        if (addToBackStack) {
+            transaction.addToBackStack(null);
+        }
+        transaction.commit();
 	}
 	
 	@Override
@@ -141,7 +141,6 @@ public class MainActivity extends FragmentActivity {
 	    }
 	}
 	
-	
 	private Session.StatusCallback callback = 
 	    new Session.StatusCallback() {
 	    @Override
@@ -174,5 +173,8 @@ public class MainActivity extends FragmentActivity {
 	    }
 	    return false;
 	}
+	
+	
+	
 
 }
