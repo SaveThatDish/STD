@@ -9,8 +9,6 @@
 	<classpathentry kind="lib" path="libs/scribe-1.1.0.jar"/>
 	<classpathentry kind="lib" path="libs/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="libs/commons-codec-1.4.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/android-support-v7-appcompat"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/FacebookSDK"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
