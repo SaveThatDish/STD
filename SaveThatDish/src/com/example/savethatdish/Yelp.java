@@ -6,6 +6,9 @@ import org.scribe.model.Response;
 import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import org.scribe.oauth.OAuthService;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /*
  Example code based on code from Nicholas Smith at http://imnes.blogspot.com/2011/01/how-to-use-yelp-v2-from-java-including.html
@@ -56,8 +59,8 @@ public class Yelp {
    }
 
    // CLI
-   /*
-   public static void main(String[] args) {
+   
+   public static void main(String[] args) throws JSONException {
       // These are our keys I guess
       String consumerKey = "PYJ9fp4Zs357x8GKEcc2OA";
       String consumerSecret = "Svw5yWnPK26_WYOrbkcvsC4PMNU";
@@ -68,7 +71,17 @@ public class Yelp {
       Yelp yelp = new Yelp(consumerKey, consumerSecret, token, tokenSecret);
       String response = yelp.search("burritos", 30.361471, -87.164326);
 
+      JSONObject obj = new JSONObject(response);
+      JSONArray businesses = obj.getJSONArray("businesses");
+      
+      int n = businesses.length();
+      for(int i = 0; i < n; i++) {
+    	  System.out.println(businesses.getJSONObject(i));
+    	  System.out.println(businesses.getJSONObject(i).getString("name"));
+      }
       System.out.println(response);
+      
+      
    }
-   */
+   
 }
