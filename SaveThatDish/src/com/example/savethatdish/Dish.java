@@ -25,7 +25,8 @@ public class Dish {
       
       //Check to see if the dish is already in the database
       ParseQuery<ParseObject> query = ParseQuery.getQuery("Dish");
-      query.whereEqualTo("name", dishName);
+      query.whereEqualTo("name", this.name);
+      
       //query.whereEqualTo("short_address", shortAddress);
       query.findInBackground(new FindCallback<ParseObject>() {
           public void done(List<ParseObject> list, ParseException e) {
