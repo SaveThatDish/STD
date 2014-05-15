@@ -32,6 +32,9 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
+		   /* Intent intent = new Intent(this, DishListActivity.class);
+		    startActivity(intent);  */
+
 	    
 	    uiHelper = new UiLifecycleHelper(this, callback);
 	    uiHelper.onCreate(savedInstanceState);
@@ -41,6 +44,7 @@ public class MainActivity extends FragmentActivity {
 	    		"U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
 	    
 	    setContentView(R.layout.activity_main);
+	    
 	    
 	    /* MANAGE FRAGMENTS */
 	    FragmentManager fm = getSupportFragmentManager();

@@ -14,7 +14,9 @@ public class DishListActivity extends Activity implements OnClickListener {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.dishlist); //set the XML File.
 	    Button hamburger = (Button) findViewById(R.id.hamburgerButton);  //hamburgerButton declared in dishlist.xml
+	    Button addButton = (Button) findViewById(R.id.addButton);
         hamburger.setOnClickListener(this); //make a listener.
+        addButton.setOnClickListener(this);
 
 	}
     // Implement the OnClickListener callback
@@ -35,6 +37,10 @@ public class DishListActivity extends Activity implements OnClickListener {
        * REFERENCE: http://developer.android.com/guide/components/activities.html#Lifecycle
        */
       }
+      else if (v.getId() == R.id.addButton) {
+       	System.err.println("TEST UNTIL ACTUAL ADD IMPLEMENTATION");
+      }
+       
       
       
     }
