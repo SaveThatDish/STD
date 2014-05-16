@@ -1,23 +1,53 @@
 package com.example.savethatdish;
 
+import java.util.List;
+
+import android.util.Log;
+
+import com.parse.FindCallback;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseException;
 
 
 public class Dish {
 
    private String name;
    private String restaurant;
-   ParseObject dish;
-
+   private String location;
+   
    //we need to store the location data, not restaurant name. location implicitly has res. name as well
-   public Dish(String dishName, String restaurantName) { //what info is the location stored as... string? 
-      this.name = dishName;
-      this.restaurant = restaurantName;
+   public Dish(String dishName, String shortAddress) { //what info is the location stored as... string? 
+      
+	  //Assign variables
+	  this.name = dishName;
+      this.location = shortAddress;   
+      
+      //Check to see if the dish is already in the database
+      ParseQuery<ParseObject> query = ParseQuery.getQuery("Dish");
+      query.whereEqualTo("name", this.name);
+      
+      //query.whereEqualTo("short_address", shortAddress);
+      query.findInBackground(new FindCallback<ParseObject>() {
+          public void done(List<ParseObject> list, ParseException e) {
+              if (e == null) 
+              {
+            	  Log.d("testing", "List is of size  " + list.size());
+              } 
+              else 
+              {
+                  Log.d("testing", "Error: " + e.getMessage());
+              }
+          }
+      });
       
       //if dish doesn't exist in parse
         //addToParse(); //check return type/error handling. what do we do if it fails?
       //else
-        //do nothing?
+        //pull info from parse
+      
+      //this.restaurant = restaurantName; QUERY RESTAURANT NAME
+
       
       //should we create a ParseQuery object? We'll need it for allLikes and onBucketList only, 
       //so maybe only create the object in the methods that actually need it?
@@ -33,7 +63,14 @@ public class Dish {
     */
    
    private boolean addToParse() {
-	   dish = new ParseObject("Dish"); 
+	   ParseObject dish = new ParseObject("Dish"); 
+	   dish.add("name", name);
+	   
+	   //PULL INFORMATION (LOCATION, RESTAURANT NAME...) FROM YELP
+	   //LAWRENCE HELP
+	   
+	   dish.saveInBackground();//Adds to database
+	   
 	   //Associated info to add: restaurant name, location. Anything else?
 	   return true; //need to do error handling before returning
    }
