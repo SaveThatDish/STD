@@ -153,7 +153,6 @@ public class MainActivity extends FragmentActivity {
 	
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
-		super.onPrepareOptionsMenu(menu);
 	    // only add the menu when the selection fragment is showing
 	    if (fragments[SELECTION].isVisible()) {
 	        if (menu.size() == 0) {
