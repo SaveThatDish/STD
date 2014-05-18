@@ -28,6 +28,14 @@ public class MainActivity extends FragmentActivity {
 	private MenuItem settings;	// Menu item in settings
 	private Fragment[] fragments = new Fragment[FRAGMENT_COUNT];
 	private UiLifecycleHelper uiHelper;
+	private Session.StatusCallback callback = 
+		    new Session.StatusCallback() {
+		    @Override
+		    public void call(Session session, 
+		            SessionState state, Exception exception) {
+		        onSessionStateChange(session, state, exception);
+		    }
+		};
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -141,17 +149,11 @@ public class MainActivity extends FragmentActivity {
 	    }
 	}
 	
-	private Session.StatusCallback callback = 
-	    new Session.StatusCallback() {
-	    @Override
-	    public void call(Session session, 
-	            SessionState state, Exception exception) {
-	        onSessionStateChange(session, state, exception);
-	    }
-	};
+	
 	
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
+		super.onPrepareOptionsMenu(menu);
 	    // only add the menu when the selection fragment is showing
 	    if (fragments[SELECTION].isVisible()) {
 	        if (menu.size() == 0) {
