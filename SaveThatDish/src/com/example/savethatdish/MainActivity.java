@@ -50,8 +50,8 @@ public class MainActivity extends FragmentActivity {
 	    uiHelper.onCreate(savedInstanceState);
 	    
 	    // Initialize parse
-	    //Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", 
-	    		//"U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
+	    Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", 
+	    		"U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
 	    ParseFacebookUtils.initialize("311859808965504");
 	    
 	    ParseFacebookUtils.logIn(this, new LogInCallback() {
