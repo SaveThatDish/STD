@@ -8,12 +8,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 public class SearchActivity extends Activity {
 	private static final String CONSUMER_KEY = "PYJ9fp4Zs357x8GKEcc2OA";
@@ -22,26 +25,35 @@ public class SearchActivity extends Activity {
 	private static final String TOKEN_SECRET = "MLFvYopfLQVy8YWpN7WObb8u_EA";
 	
 	private static List<String> results = new ArrayList<String>();
+	private EditText searchText, locationText;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.search);
-		Button searchButton = (Button)findViewById(R.id.searchButton);
-		
-		searchButton.setOnClickListener(new View.OnClickListener() {
+		ImageButton imageButton1 = (ImageButton)findViewById(R.id.imageButton1);
+		imageButton1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				results.clear();
-				// TODO Auto-generated method stub
-				EditText searchText = (EditText)findViewById(R.id.editTextSearch);
-				EditText locationText = (EditText)findViewById(R.id.editTextLocation);
+				searchText = (EditText)findViewById(R.id.editTextSearchKeyword);
+				locationText = (EditText)findViewById(R.id.editTextSearchLocation);
 				String query = searchText.getText().toString();
 				String locationQuery = locationText.getText().toString();
 				new SearchTask().execute(query, locationQuery);
 			}
 		});
 	}
+	
+	@Override
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.
+                INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(searchText.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(locationText.getWindowToken(), 0);
+        return true;
+    }
+	
 	
 	public static List<String> returnResults() {
 		return results;
