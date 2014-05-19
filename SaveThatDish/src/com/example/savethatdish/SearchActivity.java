@@ -19,10 +19,10 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class SearchActivity extends Activity {
-	private static final String CONSUMER_KEY = "PYJ9fp4Zs357x8GKEcc2OA";
-	private static String CONSUMER_SECRET = "Svw5yWnPK26_WYOrbkcvsC4PMNU";
-	private static final String TOKEN = "_o14KmTq969arSh-BdJBIHIBLanS3h2J";
-	private static final String TOKEN_SECRET = "MLFvYopfLQVy8YWpN7WObb8u_EA";
+	public static final String CONSUMER_KEY = "PYJ9fp4Zs357x8GKEcc2OA";
+	public static String CONSUMER_SECRET = "Svw5yWnPK26_WYOrbkcvsC4PMNU";
+	public static final String TOKEN = "_o14KmTq969arSh-BdJBIHIBLanS3h2J";
+	public static final String TOKEN_SECRET = "MLFvYopfLQVy8YWpN7WObb8u_EA";
 	
 	private static List<String> results = new ArrayList<String>();
 	private EditText searchText, locationText;
