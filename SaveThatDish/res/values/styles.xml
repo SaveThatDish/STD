@@ -15,8 +15,13 @@
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-        <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>	
     </style>
-
+    
+    <style name="FacebookLoginButton">
+    	<item name="android:background">@drawable/login_button</item>
+    	<item name="android:layout_marginTop">10dp</item>
+    	<item name="android:layout_marginBottom">10dp</item>
+    	<item name="android:layout_gravity">center_horizontal</item>
+	</style>
+    
 </resources>

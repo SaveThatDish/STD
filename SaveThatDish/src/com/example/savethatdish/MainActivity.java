@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +16,11 @@ import android.view.ViewGroup;
 import com.facebook.Session;
 import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
+import com.parse.LogInCallback;
 import com.parse.Parse;
+import com.parse.ParseFacebookUtils;
+import com.parse.ParseUser;
+import com.parse.ParseException;
 
 public class MainActivity extends FragmentActivity {
 	
@@ -28,6 +33,14 @@ public class MainActivity extends FragmentActivity {
 	private MenuItem settings;	// Menu item in settings
 	private Fragment[] fragments = new Fragment[FRAGMENT_COUNT];
 	private UiLifecycleHelper uiHelper;
+	private Session.StatusCallback callback = 
+		    new Session.StatusCallback() {
+		    @Override
+		    public void call(Session session, 
+		            SessionState state, Exception exception) {
+		        onSessionStateChange(session, state, exception);
+		    }
+		};
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +52,21 @@ public class MainActivity extends FragmentActivity {
 	    // Initialize parse
 	    Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", 
 	    		"U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
+	    /*
+	    ParseFacebookUtils.initialize("311859808965504");
+	    
+	    ParseFacebookUtils.logIn(this, new LogInCallback() {
+	    	  @Override
+	    	  public void done(ParseUser user, ParseException err) {
+	    	    if (user == null) {
+	    	      Log.d("MyApp", "Uh oh. The user cancelled the Facebook login.");
+	    	    } else if (user.isNew()) {
+	    	      Log.d("MyApp", "User signed up and logged in through Facebook!");
+	    	    } else {
+	    	      Log.d("MyApp", "User logged in through Facebook!");
+	    	    }
+	    	  }
+	    	}); */
 	    
 	    setContentView(R.layout.activity_main);
 	    
@@ -141,14 +169,7 @@ public class MainActivity extends FragmentActivity {
 	    }
 	}
 	
-	private Session.StatusCallback callback = 
-	    new Session.StatusCallback() {
-	    @Override
-	    public void call(Session session, 
-	            SessionState state, Exception exception) {
-	        onSessionStateChange(session, state, exception);
-	    }
-	};
+	
 	
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {

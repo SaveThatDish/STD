@@ -1,55 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:orientation="vertical"
-              android:background="#00A08A" >
-
-    <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal" >
+              android:background="@drawable/login_background" >
+              
+    	<ImageView
+                android:id="@+id/splash_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/login_dishlist_text" />
+        
         <ImageView
                 android:id="@+id/splash_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:gravity="center"
-                android:src="@drawable/stdlogo" />
-        
-    </LinearLayout>
+                android:layout_centerHorizontal="true"
+                android:layout_above="@id/splash_name"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/logo" />
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="#FFFFFF"
-            android:textSize="28sp"
-            android:typeface="serif"
-            android:textStyle="italic"
-            android:text="@string/app_name" />
+    	<com.facebook.widget.LoginButton
+    	    	xmlns:facebook="http://schemas.android.com/apk/res-auto"
+            	android:id="@+id/login_button"
+            	android:background="@drawable/button_animation"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_centerHorizontal="true"
+                android:layout_below="@id/splash_name"
+            	android:layout_marginTop="25dp"
+            	facebook:login_text=""
+        		facebook:logout_text=""
+        		style="@style/FacebookLoginButton" />
 
-    <TextView
-            android:id="@+id/profile_name"
-            android:layout_width="174dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:textColor="#FFFFFF"
-            android:lines="3"
-            android:textSize="17sp"
-            android:text="@string/get_started"
-            android:layout_gravity="center"/>
-
-    <com.facebook.widget.LoginButton
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp" />
-
-</LinearLayout>
+</RelativeLayout>
