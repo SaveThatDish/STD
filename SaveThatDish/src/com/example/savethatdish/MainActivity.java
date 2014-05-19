@@ -52,6 +52,7 @@ public class MainActivity extends FragmentActivity {
 	    // Initialize parse
 	    Parse.initialize(this, "dmq07tEG39xubkof59l2UyXnZJcojifl3jlYQ0af", 
 	    		"U0Lsnx5qHCdXTzPBtb8NMlInEApUUFEDq1q0gW83");
+	    /*
 	    ParseFacebookUtils.initialize("311859808965504");
 	    
 	    ParseFacebookUtils.logIn(this, new LogInCallback() {
@@ -65,7 +66,7 @@ public class MainActivity extends FragmentActivity {
 	    	      Log.d("MyApp", "User logged in through Facebook!");
 	    	    }
 	    	  }
-	    	});
+	    	}); */
 	    
 	    setContentView(R.layout.activity_main);
 	    
