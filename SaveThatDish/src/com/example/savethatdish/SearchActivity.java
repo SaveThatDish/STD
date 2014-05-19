@@ -8,13 +8,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 
 public class SearchActivity extends Activity {
 	private static final String CONSUMER_KEY = "PYJ9fp4Zs357x8GKEcc2OA";
@@ -22,7 +21,7 @@ public class SearchActivity extends Activity {
 	private static final String TOKEN = "_o14KmTq969arSh-BdJBIHIBLanS3h2J";
 	private static final String TOKEN_SECRET = "MLFvYopfLQVy8YWpN7WObb8u_EA";
 	
-	private List<String> results = new ArrayList<String>();
+	private static List<String> results = new ArrayList<String>();
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -36,24 +35,16 @@ public class SearchActivity extends Activity {
 				results.clear();
 				// TODO Auto-generated method stub
 				EditText searchText = (EditText)findViewById(R.id.editTextSearch);
+				EditText locationText = (EditText)findViewById(R.id.editTextLocation);
 				String query = searchText.getText().toString();
-				new SearchTask().execute(query);
+				String locationQuery = locationText.getText().toString();
+				new SearchTask().execute(query, locationQuery);
 			}
 		});
-
-		
-		
-		/**listView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});*/
+	}
 	
-		
+	public static List<String> returnResults() {
+		return results;
 	}
 	
 	public class SearchTask extends AsyncTask<String, Void, Void> {
@@ -63,7 +54,7 @@ public class SearchActivity extends Activity {
 			try {
 				
 				Yelp yelp = new Yelp(CONSUMER_KEY, CONSUMER_SECRET, TOKEN, TOKEN_SECRET);
-			    String response = yelp.search(arg0[0], "0", "La Jolla");  // hardcoded sort and location params for now
+			    String response = yelp.search(arg0[0], "0", arg0[1]);  // hardcoded sort and location params for now
 			      
 			    JSONObject obj = new JSONObject(response);
 			    JSONArray businesses = obj.getJSONArray("businesses");
@@ -80,11 +71,8 @@ public class SearchActivity extends Activity {
 		}
 		
 		protected void onPostExecute(Void result) {
-			ListView listView = (ListView)findViewById(R.id.searchResults);
-			ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-					SearchActivity.this,
-					android.R.layout.simple_list_item_1, results);
-			listView.setAdapter(arrayAdapter);
+			Intent results = new Intent(SearchActivity.this, ResultsActivity.class);
+			startActivity(results);
 		}
 	
 	}
