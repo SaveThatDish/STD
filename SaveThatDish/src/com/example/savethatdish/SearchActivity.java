@@ -49,8 +49,7 @@ public class SearchActivity extends Activity {
     public boolean onTouchEvent(MotionEvent event) {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.
                 INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(searchText.getWindowToken(), 0);
-        imm.hideSoftInputFromWindow(locationText.getWindowToken(), 0);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         return true;
     }
 	
