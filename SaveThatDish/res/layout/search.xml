@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/historytext"
         android:layout_width="106dip"
         android:layout_height="50dip"
         android:layout_centerHorizontal="true"
@@ -34,7 +34,7 @@
         android:id="@+id/editTextSearchLocation"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageButton1"
+        android:layout_above="@+id/historytext"
         android:layout_alignLeft="@+id/editTextSearchKeyword"
         android:layout_alignRight="@+id/editTextSearchKeyword"
         android:layout_marginBottom="30dp"

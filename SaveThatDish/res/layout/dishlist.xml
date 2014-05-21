@@ -146,5 +146,79 @@
         <requestFocus />
     </AutoCompleteTextView>
 
+    <ImageButton
+        android:id="@+id/dishlisttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/whiteroundedrect"
+        android:layout_alignLeft="@+id/whiteroundedrect"
+        android:layout_alignRight="@+id/blueroundedrect"
+        android:layout_alignTop="@+id/whiteroundedrect"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/dishlisttext"
+        android:contentDescription="@string/desc" />
+
+    <ImageButton
+        android:id="@+id/historytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/whiteroundedrect"
+        android:layout_alignRight="@+id/whiteroundedrect"
+        android:layout_alignTop="@+id/whiteroundedrect"
+        android:layout_alignLeft="@+id/dishlisttext"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="100dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/historytext"
+        android:contentDescription="@string/desc"
+        android:minHeight="0dp"
+        android:minWidth="0dp" />
+
+    <ImageButton
+        android:id="@+id/mapbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/searchicon"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/bgwhiterect"
+        android:layout_marginBottom="2dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/blueroundedrect"
+        android:adjustViewBounds="true"
+        android:background="@drawable/mapbutton"
+        android:contentDescription="@string/desc"
+        android:minHeight="0dp"
+        android:minWidth="0dp" />
+
+    <ImageButton
+        android:id="@+id/sortbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/searchicon"
+        android:layout_below="@+id/bgwhiterect"
+        android:layout_toLeftOf="@+id/mapbutton"
+        android:layout_toRightOf="@+id/headertext"
+        android:background="@drawable/sortbutton"
+        android:contentDescription="@string/desc"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="14dp"
+        android:minHeight="0dp"
+        android:minWidth="0dp" />
+
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/searchdivider" >
+    </ListView>
 
 </RelativeLayout>
