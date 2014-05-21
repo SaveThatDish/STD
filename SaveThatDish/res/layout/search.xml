@@ -6,7 +6,7 @@
     android:orientation="vertical" >
 
     <ImageButton
-        android:id="@+id/historytext"
+        android:id="@+id/imageButton1"
         android:layout_width="106dip"
         android:layout_height="50dip"
         android:layout_centerHorizontal="true"
