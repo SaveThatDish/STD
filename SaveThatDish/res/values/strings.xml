@@ -12,9 +12,13 @@
     <string name="searchtext">search your dishList</string>
     
     <string name="label">Individual restaurant labels</string>
-    <string name="address">1234 Sample St, San Diego, CA 92122</string>
+    <string name="address">1234 Sample St, \n San Diego, CA 92122</string>
     <string name="name">Starbucks</string>
-    
+    <string name="rating">4.5</string>
+    <string name="friends">5</string>
+    <string name="distance">0.8</string>
+        
     <string name="keywordHint">What are you craving?</string>
 
+    <string name="searchMenu">search the menu</string>
 </resources>
