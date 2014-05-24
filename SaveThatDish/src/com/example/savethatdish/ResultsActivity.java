@@ -18,7 +18,7 @@ public class ResultsActivity extends Activity {
 				android.R.layout.simple_list_item_1, SearchActivity.returnResults());
 		listView.setAdapter(arrayAdapter);
 
-		/*
+		
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -28,7 +28,7 @@ public class ResultsActivity extends Activity {
 				startActivity(restaurant);
 			}
 			
-		});*/
+		});
 		
 	}
 }
