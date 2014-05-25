@@ -21,4 +21,6 @@
     <string name="keywordHint">What are you craving?</string>
 
     <string name="searchMenu">search the menu</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
 </resources>

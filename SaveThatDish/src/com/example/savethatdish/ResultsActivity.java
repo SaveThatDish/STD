@@ -3,6 +3,9 @@ package com.example.savethatdish;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,7 +27,7 @@ public class ResultsActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long id) {
 				// TODO Auto-generated method stub
-				Intent restaurant = new Intent(this, RestaurantActivity.class);
+				Intent restaurant = new Intent(ResultsActivity.this, RestaurantActivity.class);
 				startActivity(restaurant);
 			}
 			
